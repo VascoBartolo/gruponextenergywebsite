@@ -12,7 +12,7 @@ import iconInvest from "@/assets/icon_invest.png";
  */
 
 const C = 220; // centre (viewBox units)
-const R = 150; // orbit radius
+const R = 200; // orbit radius
 
 // Four companies on the diagonal axis (the brand "X")
 const companies = [
@@ -24,7 +24,7 @@ const companies = [
   const a = (c.deg * Math.PI) / 180;
   const x = C + R * Math.cos(a);
   const y = C + R * Math.sin(a);
-  return { ...c, x, y, px: (x / 440) * 100, py: (y / 440) * 100, delay: i * 700 };
+  return { ...c, x, y, px: (x / 500) * 100, py: (y / 500) * 100, delay: i * 700 };
 });
 
 const GroupConstellation = () => (
