@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=chillax@500,600,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 24% 97%;
+    --foreground: 220 28% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 28% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 28% 11%;
+
+    --primary: 22 87% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 351 73% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 32 20% 92%;
+    --muted-foreground: 220 12% 42%;
+
+    --accent: 22 87% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 32 16% 88%;
+    --input: 32 16% 88%;
+    --ring: 22 87% 59%;
+
+    --radius: 0.75rem;
+
+    --brand-orange: 22 87% 59%;
+    --brand-red: 351 73% 48%;
+    --brand-dark: 222 30% 7%;
+    --brand-cream: 30 24% 97%;
+
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-red)));
+    --gradient-brand-soft: linear-gradient(135deg, hsl(var(--brand-orange) / 0.1), hsl(var(--brand-red) / 0.1));
+    --shadow-brand: 0 20px 60px -20px hsl(var(--brand-red) / 0.4);
+    --shadow-soft: 0 10px 40px -15px hsl(220 25% 12% / 0.15);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 42 38% 94%;
+    --card: 220 25% 12%;
+    --card-foreground: 42 38% 94%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 42 38% 94%;
+    --primary: 22 87% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 351 73% 48%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 42 20% 70%;
+    --accent: 22 87% 59%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 22 87% 59%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4 { @apply font-display; }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bg-gradient-brand { background: var(--gradient-brand); }
+  .bg-gradient-brand-soft { background: var(--gradient-brand-soft); }
+  .shadow-brand { box-shadow: var(--shadow-brand); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+
+  /* Subtle dotted grid texture — distinguishes the holding site from the operational one */
+  .bg-dot-grid {
+    background-image: radial-gradient(hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-position: -1px -1px;
+  }
+  .bg-dot-grid-light {
+    background-image: radial-gradient(hsl(0 0% 100% / 0.07) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+  .bg-radial-glow {
+    background:
+      radial-gradient(60% 50% at 50% 0%, hsl(var(--brand-orange) / 0.14), transparent 70%),
+      radial-gradient(40% 40% at 85% 30%, hsl(var(--brand-red) / 0.10), transparent 70%);
+  }
+}
