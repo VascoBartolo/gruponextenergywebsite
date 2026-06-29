@@ -1,7 +1,7 @@
 import nxMonogram from "@/assets/g_nx_branco.png";
 import iconEngineering from "@/assets/icon_engineering.png";
 import iconCommunity from "@/assets/icon_community.png";
-import iconDeep from "@/assets/icon_deep.png";
+import iconDeep from "@/assets/g_deep_colorido.png";
 import iconInvest from "@/assets/icon_invest.png";
 
 /**
@@ -12,11 +12,11 @@ import iconInvest from "@/assets/icon_invest.png";
  */
 
 const C = 220; // centre (viewBox units)
-const R = 200; // orbit radius
+const R = 220; // orbit radius
 
 // Four companies on the diagonal axis (the brand "X")
 const companies = [
-  { label: "Engenharia", icon: iconEngineering, deg: -135 },
+  { label: "Engenharia & Soluções", icon: iconEngineering, deg: -135 },
   { label: "Community", icon: iconCommunity, deg: -45 },
   { label: "Invest", icon: iconInvest, deg: 45 },
   { label: "Deep", icon: iconDeep, deg: 135 },
@@ -24,7 +24,7 @@ const companies = [
   const a = (c.deg * Math.PI) / 180;
   const x = C + R * Math.cos(a);
   const y = C + R * Math.sin(a);
-  return { ...c, x, y, px: (x / 500) * 100, py: (y / 500) * 100, delay: i * 700 };
+  return { ...c, x, y, px: (x / 520) * 100, py: (y / 520) * 100, delay: i * 700 };
 });
 
 const GroupConstellation = () => (
@@ -59,22 +59,25 @@ const GroupConstellation = () => (
     {companies.map((c) => (
       <div
         key={c.label}
-        className="absolute -translate-x-1/2 -translate-y-1/2 animate-float"
+        className="absolute z-20 -translate-x-1/2 -translate-y-1/2 animate-float"
         style={{ left: `${c.px}%`, top: `${c.py}%`, animationDelay: `${c.delay}ms` }}
       >
         <div className="relative">
-          <div className="w-[4.5rem] h-[4.5rem] md:w-20 md:h-20 rounded-full bg-card border border-border shadow-soft flex items-center justify-center p-3 hover:border-primary/50 hover:scale-105 transition-all duration-300">
+          <div className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-card border border-border shadow-soft flex items-center justify-center p-2 sm:p-2.5 md:p-3 hover:border-primary/50 hover:scale-105 transition-all duration-300">
             <img src={c.icon} alt={`Nextenergy ${c.label}`} className="max-w-full max-h-full w-auto h-auto object-contain" />
           </div>
-          <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 text-[11px] font-sub font-semibold uppercase tracking-wider text-muted-foreground whitespace-nowrap">{c.label}</span>
+          <span className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 md:mt-2 text-[9px] sm:text-[10px] md:text-[11px] font-sub font-semibold uppercase tracking-wider text-muted-foreground whitespace-nowrap">{c.label}</span>
         </div>
       </div>
     ))}
 
-    {/* central holding node */}
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-brand shadow-brand flex items-center justify-center animate-pulse-glow">
-        <img src={nxMonogram} alt="Nextenergy, SGPS" className="w-14 md:w-16 h-auto object-contain" />
+    {/* central holding node — kept below the satellite labels (z-10 < z-20) */}
+    <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+      <div className="relative flex items-center justify-center">
+        <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full bg-gradient-brand shadow-brand flex items-center justify-center animate-pulse-glow">
+          <img src={nxMonogram} alt="Grupo Nextenergy" className="w-12 sm:w-14 md:w-16 h-auto object-contain" />
+        </div>
+        <span className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 md:mt-2 text-[9px] sm:text-[10px] md:text-[11px] font-sub font-semibold uppercase tracking-wider text-muted-foreground whitespace-nowrap">Grupo Nextenergy</span>
       </div>
     </div>
   </div>

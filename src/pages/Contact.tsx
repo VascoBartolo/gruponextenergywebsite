@@ -25,7 +25,7 @@ const Contact = () => {
       <section className="relative bg-dot-grid overflow-hidden">
         <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
         <div className="container relative pt-20 pb-12">
-          <div className="max-w-3xl space-y-6 animate-fade-in-up">
+          <div className="space-y-6 animate-fade-in-up">
             <div className="text-xs font-sub font-semibold uppercase tracking-widest text-primary">Contactos</div>
             <h1 className="font-display text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">
               Fale com a <span className="text-gradient-brand">sociedade-mãe</span>.
@@ -38,9 +38,9 @@ const Contact = () => {
       </section>
 
       <section className="container pb-24 grid lg:grid-cols-5 gap-10">
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 flex flex-col gap-6">
           {[
-            { icon: Mail, title: "Email", value: "geral@gruponextenergy.pt", href: "mailto:geral@gruponextenergy.pt" },
+            { icon: Mail, title: "Email", value: "info@gruponextenergy.com", href: "mailto:info@gruponextenergy.com" },
             { icon: Phone, title: "Telefone", value: "+351 296 242 547", href: "tel:+351296242547" },
             { icon: Building2, title: "Nextenergy, SGPS, Lda", value: "NIPC: 519 ### ###" },
             { icon: MapPin, title: "Sede", value: "Portugal" },
@@ -58,7 +58,7 @@ const Contact = () => {
             </a>
           ))}
 
-          <div className="p-6 rounded-2xl bg-gradient-brand text-primary-foreground">
+          <div className="p-6 rounded-2xl bg-gradient-brand text-primary-foreground lg:flex-1 lg:flex lg:flex-col lg:justify-center">
             <div className="font-sub font-semibold mb-2">Horário</div>
             <div className="text-sm opacity-90 font-body">Seg — Sex · 09:00 — 18:00</div>
           </div>
