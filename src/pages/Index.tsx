@@ -34,11 +34,11 @@ const Index = () => {
             <p className="text-lg text-muted-foreground max-w-2xl font-body leading-relaxed">
               Nextenergy, SGPS detém as participações sociais das empresas operacionais e coordena a estratégia, o capital e a governance do grupo.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button asChild variant="brand" size="xl">
+            <div className="flex gap-3 sm:gap-4 justify-center">
+              <Button asChild variant="brand" size="xl" className="flex-1 sm:flex-none min-w-0 px-4 sm:px-10 text-sm sm:text-base whitespace-normal sm:whitespace-nowrap leading-tight [&_svg]:hidden sm:[&_svg]:inline-block">
                 <Link to="/empresas">Conhecer as empresas <ArrowRight /></Link>
               </Button>
-              <Button asChild variant="brand-outline" size="xl">
+              <Button asChild variant="brand-outline" size="xl" className="flex-1 sm:flex-none min-w-0 px-4 sm:px-10 text-sm sm:text-base whitespace-normal sm:whitespace-nowrap leading-tight">
                 <Link to="/grupo">Sobre o grupo</Link>
               </Button>
             </div>

@@ -92,14 +92,22 @@ const brands: Brand[] = [
 const CompaniesShowcase = () => {
   const [active, setActive] = useState(0);
   const paused = useRef(false);
+  const manualUntil = useRef(0);
 
-  // Auto-rotate every 5s, pausing while the user is interacting.
+  // Auto-rotate every 5s, pausing while hovering or for 1 min after a click.
   useEffect(() => {
     const id = setInterval(() => {
-      if (!paused.current) setActive((i) => (i + 1) % brands.length);
+      if (paused.current || Date.now() < manualUntil.current) return;
+      setActive((i) => (i + 1) % brands.length);
     }, 5000);
     return () => clearInterval(id);
   }, []);
+
+  // Manual selection: jump to the company and hold auto-rotation for 1 minute.
+  const select = (i: number) => {
+    setActive(i);
+    manualUntil.current = Date.now() + 60_000;
+  };
 
   const b = brands[active];
 
@@ -115,7 +123,7 @@ const CompaniesShowcase = () => {
           return (
             <button
               key={brand.id}
-              onClick={() => setActive(i)}
+              onClick={() => select(i)}
               aria-pressed={isActive}
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-sub font-bold uppercase tracking-wider transition-all duration-300 ${
                 isActive ? "text-white" : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/40"
