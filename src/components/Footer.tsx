@@ -3,7 +3,7 @@ import groupLogoWhite from "@/assets/g_next_branco.png";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => (
-  <footer className="bg-brand-dark text-background mt-32">
+  <footer className="bg-brand-dark text-background mt-20">
     <div className="container py-16 grid md:grid-cols-4 gap-10">
       <div className="md:col-span-2 space-y-4">
         <Link to="/" aria-label="Grupo Nextenergy — início" className="inline-flex">

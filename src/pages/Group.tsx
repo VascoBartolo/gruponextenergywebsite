@@ -16,7 +16,7 @@ const Group = () => (
   <Layout>
     <section className="relative bg-dot-grid overflow-hidden">
       <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-      <div className="container relative pt-20 pb-12">
+      <div className="container relative pt-12 pb-8">
         <div className="max-w-3xl space-y-6 animate-fade-in-up">
           <div className="text-xs font-sub font-semibold uppercase tracking-widest text-primary">O Grupo</div>
           <h1 className="font-display text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">
@@ -29,7 +29,7 @@ const Group = () => (
       </div>
     </section>
 
-    <section className="container pb-20">
+    <section className="container pb-12">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {functions.map((s, i) => (
           <div key={s.title} style={{ animationDelay: `${i * 80}ms` }}
@@ -51,7 +51,7 @@ const Group = () => (
       </div>
     </section>
 
-    <section className="bg-brand-dark text-background py-20 lg:py-28">
+    <section className="bg-brand-dark text-background py-12 lg:py-20">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight">Como o grupo cria valor.</h2>
@@ -76,7 +76,7 @@ const Group = () => (
       </div>
     </section>
 
-    <section className="container py-20 text-center">
+    <section className="container py-12 lg:py-16 text-center">
       <h2 className="font-display text-3xl md:text-4xl font-bold">Estratégia. Capital. Governance. Crescimento.</h2>
       <p className="mt-3 text-muted-foreground font-body">Conheça as empresas que compõem o Grupo Nextenergy.</p>
       <Button asChild variant="brand" size="xl" className="mt-8">

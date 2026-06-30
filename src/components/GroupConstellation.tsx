@@ -75,7 +75,7 @@ const GroupConstellation = () => (
     <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
       <div className="relative flex items-center justify-center">
         <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full bg-gradient-brand shadow-brand flex items-center justify-center animate-pulse-glow">
-          <img src={nxMonogram} alt="Grupo Nextenergy" className="w-12 sm:w-14 md:w-16 h-auto object-contain" />
+          <img src={nxMonogram} alt="Grupo Nextenergy" className="w-16 sm:w-20 md:w-24 h-auto object-contain" />
         </div>
         <span className="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 md:mt-2 text-[9px] sm:text-[10px] md:text-[11px] font-sub font-semibold uppercase tracking-wider text-muted-foreground whitespace-nowrap">Grupo Nextenergy</span>
       </div>

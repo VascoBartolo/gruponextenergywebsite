@@ -22,7 +22,7 @@ const Index = () => {
       {/* HERO — centered, with the group constellation */}
       <section className="relative overflow-hidden bg-dot-grid">
         <div className="absolute inset-0 bg-radial-glow pointer-events-none" />
-        <div className="container relative py-20 lg:py-28">
+        <div className="container relative py-12 lg:py-20">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8 animate-fade-in-up">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card border border-primary/20 text-xs font-sub font-semibold tracking-wider uppercase shadow-soft">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-glow" />
@@ -44,13 +44,13 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mt-16 lg:mt-20">
+          <div className="mt-8 lg:mt-12">
             <GroupConstellation />
           </div>
         </div>
 
         {/* Stats — inline row with dividers */}
-        <div className="container relative pb-20">
+        <div className="container relative pb-12">
           <div className="mx-auto max-w-3xl flex flex-col sm:flex-row rounded-2xl border border-border bg-card/70 backdrop-blur-sm divide-y sm:divide-y-0 sm:divide-x divide-border overflow-hidden shadow-soft">
             {stats.map((s) => (
               <div key={s.label} className="flex-1 px-8 py-7 text-center hover:bg-gradient-brand-soft transition-colors duration-500">
@@ -63,7 +63,7 @@ const Index = () => {
       </section>
 
       {/* WHAT THE HOLDING DOES — numbered cards */}
-      <section className="container py-20 lg:py-32">
+      <section className="container py-12 lg:py-20">
         <div className="max-w-2xl mb-16">
           <div className="text-xs font-sub font-semibold uppercase tracking-widest text-primary mb-3">O papel da holding</div>
           <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">Coordenamos o grupo, sem nos substituirmos a ele.</h2>
@@ -92,7 +92,7 @@ const Index = () => {
       </section>
 
       {/* WHY THE GROUP — list left, text right (mirrored vs operational site) */}
-      <section className="bg-brand-dark text-background py-20 lg:py-32 relative overflow-hidden bg-dot-grid-light">
+      <section className="bg-brand-dark text-background py-12 lg:py-20 relative overflow-hidden bg-dot-grid-light">
         <div className="absolute inset-0 bg-gradient-brand opacity-10" />
         <div className="container relative grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 space-y-4">
@@ -127,7 +127,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="container py-20 lg:py-32">
+      <section className="container py-12 lg:py-20">
         <div className="relative rounded-3xl overflow-hidden p-12 md:p-20 bg-gradient-brand text-primary-foreground text-center shadow-brand">
           <div className="absolute inset-0 bg-dot-grid-light opacity-60" />
           <div className="absolute inset-0 opacity-20" style={{ background: "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4), transparent 50%)" }} />
